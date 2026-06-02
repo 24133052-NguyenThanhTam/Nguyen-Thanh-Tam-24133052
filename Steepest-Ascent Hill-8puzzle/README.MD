@@ -1,0 +1,5 @@
+Bước 1 (Tính toán chi phí ban đầu): Duỗi phẳng bàn cờ hiện tại thành mảng 1 chiều, loại bỏ số 0. Tiến hành đếm tất cả các cặp số đứng trước lớn hơn số đứng sau để ra số lượng Dãy ngược hiện tại ($Cost_{cha}).
+Bước 2 (Kiểm tra đích): Nếu số lượng dãy ngược bằng $0$ (mảng số đã được xếp thẳng hàng hoàn hảo từ 1 đến 8) -> Thuật toán đạt mục tiêu thành công và dừng lại.
+Bước 3 (Đánh giá toàn diện các hướng): Dịch chuyển ô trống 0 thử nghiệm sang tất cả các hướng có thể (Lên, Xuống, Trái, Phải). Trải phẳng và tính số dãy ngược cho từng bàn cờ con vừa sinh ra đó.
+Bước 4 (Chọn hướng dốc nhất): So sánh số lượng dãy ngược của tất cả các bàn cờ con với nhau để tìm ra đứa con có số dãy ngược nhỏ nhất (tối ưu nhất).Nếu điểm của đứa con tốt nhất này thấp hơn cấu hình cha ($Cost_text{con tốt nhất}) < Cost_{\text{cha}} ->  Máy quyết định chọn hướng đi này, cập nhật bàn cờ mới và quay lại Bước 2.
+Bước 5 (Dừng khi kẹt đỉnh): Nếu đứa con tốt nhất sau khi quét cũng có số dãy ngược bằng hoặc nhiều hơn bàn cờ cha ->  Thuật toán rơi vào trạng thái kẹt (Đỉnh cục bộ) và chấp nhận dừng chạy.
