@@ -1,0 +1,6 @@
+Các bước chạy của thuật toán Stochastic Hill Climbing 
+Bước 1 (Tính Cost Manhattan): Xem xét vị trí hiện tại của các ô số, đo tổng khoảng cách Manhattan từ các ô đó về tọa độ mục tiêu của chúng để ra điểm số của cha ($Cost_{\text{cha}}$).
+Bước 2 (Kiểm tra đích): Nếu tổng khoảng cách bằng 0 -> Các ô số đã ở đúng vị trí hoàn hảo, xuất thông báo thành công và dừng.
+Bước 3 (Lập danh sách cải tiến): Quét qua tất cả 4 hướng xung quanh (Lên, Xuống, Trái, Phải). Tính toán điểm số Manhattan của từng đứa con. Nếu đứa con nào có điểm số nhỏ hơn cha ($Cost_{\text{con}} < Cost_{\text{cha}}$) -> Thêm đứa con đó vào một "Danh sách các hướng đi tốt hơn".
+Bước 4 (Bốc thăm ngẫu nhiên):Nếu danh sách này có chứa phần tử -> Thuật toán sử dụng hàm random.choice() để chọn ngẫu nhiên một trạng thái trong danh sách đó làm điểm đứng tiếp theo. Quay lại Bước 2.
+Bước 5 (Dừng khi bế tắc): Nếu sau khi quét xong 4 hướng mà "Danh sách các hướng đi tốt hơn" hoàn toàn trống rỗng -> Thuật toán rơi vào Đỉnh cục bộ và chấp nhận dừng cuộc tìm kiếm.
