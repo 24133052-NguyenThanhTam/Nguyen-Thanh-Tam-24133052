@@ -1,0 +1,7 @@
+Các bước chạy của thuật toán Local Beam Search 
+Hành vi cốt lõi giúp Local Beam Search vượt trội hơn Leo đồi thông thường là sự giao tiếp thông tin toàn cục: Lượt đi tốt của nhánh này có thể bù đắp, cứu rỗi hoặc loại bỏ bớt các nhánh đang đi vào ngõ cụt của nhánh khác.
+Bước 1 (Khởi tạo chùm): Bắt đầu với cấu hình bàn cờ ban đầu. Thuật toán tạo ra một "chùm" quản lý song song tối đa $k$ trạng thái ($k = 3$ trong đoạn code trên).
+Bước 2 (Kiểm tra đích): Duyệt qua các trạng thái hiện diện trong chùm. Nếu phát hiện bất kỳ trạng thái nào có khoảng cách Manhattan bằng $0 -> Lập tức dừng thuật toán, trả về chuỗi đường đi dẫn đến trạng thái đó và báo cáo thành công.
+Bước 3 (Bùng nổ thế hệ con): Cho phép tất cả các trạng thái cha đang có mặt trong chùm đồng loạt di chuyển ô trống để sinh ra tất cả các bàn cờ con có thể. Gom toàn bộ các đứa con này vào một bể chứa chung.
+Bước 4 (Sắp xếp và Chọn lọc tự nhiên): * Tính toán khoảng cách Manhattan cho tất cả các đứa con trong bể chứa.Sắp xếp toàn bộ danh sách con từ điểm thấp (tốt nhất) đến điểm cao (tệ nhất).Tiến hành chọn lọc cực đoan: Chỉ lấy đúng $k$ đứa con đứng đầu bảng xếp hạng để đưa vào chùm mới cho thế hệ sau. Toàn bộ các đứa con còn lại bị loại bỏ hoàn toàn để tiết kiệm bộ nhớ.
+Bước 5 (Xử lý bế tắc): Nếu tại một thế hệ, bể chứa con hoàn toàn trống rỗng hoặc không thể chọn lọc ra trạng thái tốt hơn -> Thuật toán báo cáo kẹt đỉnh cục bộ và kết thúc hành trình. Ngược lại, quay lại Bước 2.
