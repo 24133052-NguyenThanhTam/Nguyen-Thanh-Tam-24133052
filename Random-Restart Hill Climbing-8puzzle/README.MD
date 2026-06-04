@@ -1,0 +1,5 @@
+Các bước chạy của thuật toán Random-Restart Hill Climbing
+Bước 1 (Tính Cost hiện tại): Xác định cấu hình bàn cờ hiện hành, đo tổng khoảng cách Manhattan của các ô số về đúng đích ($Cost_{\text{cha}}$).
+Bước 2 (Vòng lặp leo đồi): Tiến hành chạy thuật toán Leo đồi dốc đứng nhất (Steepest-Ascent):Quét 4 hướng xung quanh, tìm đứa con có điểm Manhattan tốt nhất.Nếu đứa con tốt nhất đó có điểm nhỏ hơn cha -> Nhảy sang đứa con, lặp lại việc leo đồi.Nếu đạt điểm Manhattan = 0 -> Dừng thuật toán, báo cáo thành công hoàn toàn.Nếu rơi vào bẫy đỉnh cục bộ (xung quanh không có hướng nào tốt hơn) -> Thoát ra và chuyển xuống Bước 3.
+Bước 3 (Khởi động lại ngẫu nhiên - Restart): Hệ thống tự động kích hoạt lệnh xáo bài. Toàn bộ cấu hình bàn cờ bị phá bỏ, máy tự sinh ra một cấu hình bàn cờ ngẫu nhiên hoàn toàn mới (nhưng đảm bảo có thể giải được về mặt toán học).
+Bước 4 (Hành trình mới): Lấy bàn cờ ngẫu nhiên vừa tạo ở Bước 3 làm điểm xuất phát mới. Quay trở lại Bước 1 để thực hiện một chu kỳ leo đồi mới. Thuật toán cam kết sẽ lặp lại chuỗi quy trình này vô hạn lần cho đến khi chạm được tới đích.
