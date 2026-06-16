@@ -1,0 +1,7 @@
+Thuật toán AND-OR Graph Search (Tìm kiếm trên đồ thị AND-OR)
+Thuật toán này tiếp cận theo tư duy chia để trị, quản lý bài toán bằng cách phân rã thành các mục tiêu con phải hoàn thành đồng thời.
+Bước 1: Tiếp cận nút OR (Lựa chọn nhánh màu) Hàm lấy ra một bang chưa tô (ví dụ: WA). Bang này đóng vai trò là một Nút OR, nghĩa là bạn chỉ cần chọn một trong các màu (Đỏ OR Xanh lá OR Xanh dương) hợp lệ là được.
+Bước 2: Kiểm tra giới hạn kẹt Mỗi lần rẽ sang một nhánh màu của nút OR, self.so_buoc cộng thêm 1. Vượt quá 30 bước, cờ bi_ket bật lên và dừng toàn bộ cây đồ thị.
+Bước 3: Gán màu thử nghiệm Nếu màu được chọn không xung đột ranh giới hình học, gán màu tạm thời cho WA và cập nhật giao diện Canvas.
+Bước 4: Phân rã sang tập nút AND (Nhiệm vụ bắt buộc) Sau khi chọn xong màu cho WA, bài toán lớn được phân rã thành một Tập các nút AND. Nút AND yêu cầu: Bạn bắt buộc phải tìm được lời giải thành công cho TẤT CẢ các bang còn lại (NT AND SA AND Q...).
+Bước 5: Hợp nhất kết quả * Nếu tất cả các bang phía dưới đều tìm được màu (Mục tiêu AND thỏa mãn): Thuật toán trả về True $\rightarrow$ Thành công.Nếu chỉ cần một bang phía dưới thất bại: Lập tức toàn bộ tập nút AND bị hủy bỏ, hệ thống quay lui về nút OR ban đầu, xóa màu đã gán (phan_bo_mau[WA] = None) để mở ra một nhánh màu OR khác.
