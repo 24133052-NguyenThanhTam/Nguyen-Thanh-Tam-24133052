@@ -1,0 +1,7 @@
+Thuật toán Pure Backtracking (Quay lui nguyên bản)
+Thuật toán này hoạt động theo cơ chế thử-sai tuần tự, mò mẫm từng bước một cách "mù quáng" mà không có sự chuẩn bị trước.
+Bước 1: Nhận danh sách chờ Hàm and_or_search_stochastic nhận vào danh sách các bang chưa tô theo thứ tự cố định (ví dụ: ["WA", "NT", "SA", ...]).
+Bước 2: Kiểm tra giới hạn 30 bước Ngay khi vào hàm, máy sẽ kiểm tra self.so_buoc. Nếu số bước tăng lên $\ge 30$, thuật toán lập tức dừng lại, bật cờ self.bi_ket = True và thông báo kẹt.
+Bước 3: Thử màu ngẫu nhiên Lấy bang đầu tiên ra khỏi danh sách (ví dụ: WA). Xáo trộn 3 màu Đỏ, Xanh lá, Xanh dương và chọn màu đầu tiên (ví dụ: Đỏ).
+Bước 4: Kiểm tra va chạm ranh giới (kiem_tra_hop_le) Quét qua các bang láng giềng đã tô màu xem có ai trùng màu Đỏ không.Nếu trùng: Bỏ qua màu này, vòng lặp for mau sẽ chuyển sang thử màu tiếp theo.Nếu không trùng: Gán phan_bo_mau[WA] = "Red", cập nhật màu lên màn hình, tăng self.so_buoc lên 1 và gọi đệ quy tiến sâu xuống bang tiếp theo.
+Bước 5: Quay lui khi bế tắc (Backtrack) Nếu đệ quy đi sâu xuống các bang dưới mà gặp ngõ cụt (vòng lặp màu của bang dưới chạy hết vẫn thất bại), lệnh xóa màu được kích hoạt: phan_bo_mau[WA] = None, khôi phục màu xám trên màn hình và lùi lại để chọn màu khác.
