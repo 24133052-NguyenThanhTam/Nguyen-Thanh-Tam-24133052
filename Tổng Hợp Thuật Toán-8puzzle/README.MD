@@ -1,4 +1,5 @@
 NHÓM I: TÌM KIẾM MÙ (UNINFORMED SEARCH)
+
 1. Thuật toán BFS (Breadth-First Search)
     Bước 1: Khởi tạo một hàng đợi Queue (FIFO - Vào trước ra trước). Đẩy trạng thái bàn cờ ban đầu (start_state) vào đầu hàng đợi.
     Bước 2: Khởi tạo một tập hợp visited = set() dùng để lưu trữ các cấu hình đã duyệt, tiến hành thêm start_state vào tập hợp này.
@@ -26,6 +27,7 @@ NHÓM I: TÌM KIẾM MÙ (UNINFORMED SEARCH)
     Bước 6: Quay trở lại Bước 2 để bắt đầu một chu kỳ tìm kiếm DFS mới sâu hơn.
 
 NHÓM II: TÌM KIẾM CÓ GỢI Ý (INFORMED SEARCH)
+
 4. Thuật toán Greedy Best-First Search (Tham lam)
     Bước 1: Khởi tạo một hàng đợi ưu tiên Priority Queue (Min-Heap - cấu trúc tự động sắp xếp phần tử có điểm nhỏ nhất lên đầu) và một tập hợp lưu trữ visited = set().
     Bước 2: Tính toán khoảng cách Heuristic $h(start)$ (Khoảng cách Manhattan - tổng khoảng cách dịch chuyển ô số về đúng vị trí) cho trạng thái ban đầu, sau đó đẩy trạng thái này vào Heap.
@@ -44,6 +46,7 @@ NHÓM II: TÌM KIẾM CÓ GỢI Ý (INFORMED SEARCH)
     Bước 7: Quay trở lại thực hiện tiếp Bước 3.
 
 NHÓM III: TÌM KIẾM CỤC BỘ (LOCAL SEARCH)
+
 6. Thuật toán Hill Climbing (Leo đồi dốc nhất)
     Bước 1: Gán cấu hình bàn cờ ban đầu làm trạng thái hiện tại, tính toán điểm lỗi Heuristic (Khoảng cách Manhattan) của nó.
     Bước 2: Từ trạng thái hiện tại, sinh ra đồng loạt tất cả các trạng thái con kế cận hợp lệ bằng cách dịch chuyển ô trống (tối đa 4 hướng).
@@ -61,6 +64,7 @@ NHÓM III: TÌM KIẾM CỤC BỘ (LOCAL SEARCH)
     Bước 6: Đánh giá điều kiện kẹt: Nếu chùm mới được chọn không có nút nào cải thiện điểm tốt hơn so với chùm cũ, thuật toán dừng lại báo kẹt cực trị cục bộ. Ngược lại, lấy chùm mới thay thế chùm cũ và quay về Bước 2.
 
 NHÓM IV: KHÔNG GIAN NIỆM TIN (BELIEF-STATE SEARCH)
+
 8. Thuật toán Belief Search
     Bước 1: Đọc trạng thái từ giao diện, dịch chuyển thử một bước hợp lệ để tạo ra một cấu hình nhiễu chắc chắn giải được. Gom hai trạng thái này lại thành một tập hợp gọi là Trạng thái Niềm tin ban đầu (Initial Belief State).
     Bước 2: Khởi tạo một hàng đợi Queue (FIFO) và đẩy tập hợp Initial Belief State vào. Đánh dấu tập này vào danh sách đã duyệt visited.
@@ -80,6 +84,7 @@ NHÓM IV: KHÔNG GIAN NIỆM TIN (BELIEF-STATE SEARCH)
     Bước 7: Quay trở lại thực hiện tiếp Bước 3.
 
 NHÓM V: THỎA MÃN RÀNG BUỘC CSP
+
 10. Thuật toán Backtracking (Quay lui)
     Bước 1: Kiểm tra cấu hình bàn cờ hiện tại: Nếu đã trùng khớp hoàn toàn với trạng thái đích, lập tức trả về chuỗi hành động và báo Thành công.
     Bước 2: Xác định vị trí ô trống (số 0) và lấy ra danh sách các hướng di chuyển hợp lệ xung quanh chưa được thử nghiệm tại bước này.
